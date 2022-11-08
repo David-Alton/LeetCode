@@ -11,3 +11,14 @@ public struct Point: Hashable {
 
     public static let zero = Point(row: 0, col: 0)
 }
+
+public extension Point {
+    var neighbours: [Point] {
+        return [
+            Point(row: self.row + 1, col: self.col),
+            Point(row: self.row - 1, col: self.col),
+            Point(row: self.row, col: self.col + 1),
+            Point(row: self.row, col: self.col - 1)
+        ]
+    }
+}
