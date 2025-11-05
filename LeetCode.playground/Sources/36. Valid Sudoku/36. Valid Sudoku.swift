@@ -67,7 +67,7 @@ public class Solution36 {
     }
 
     func validPlacement(ofPoint point: Point, onBoard board: [[Character]]) -> Bool {
-        let value = board[point.row][point.column]
+        let value = board[point.row][point.col]
         guard value != "." else { return true }
         guard validPlacement(ofValue: value, inRow: point.row) else { return false }
         guard validPlacement(ofValue: value, inColumn: point.col) else { return false }
@@ -82,6 +82,7 @@ public class Solution36 {
             rows[row] = [Character: Bool]()
         }
         rows[row]?[value] = true
+        return true
     }
 
     func validPlacement(ofValue value: Character, inColumn column: Int) -> Bool {
@@ -90,6 +91,7 @@ public class Solution36 {
             columns[column] = [Character: Bool]()
         }
         columns[column]?[value] = true
+        return true
     }
 
     func validPlacement(ofValue value: Character, inBox box: Int) -> Bool {
@@ -98,6 +100,7 @@ public class Solution36 {
             boxes[box] = [Character: Bool]()
         }
         boxes[box]?[value] = true
+        return true
     }
 
     func box(forPoint point: Point) -> Int {

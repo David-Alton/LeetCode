@@ -1,3 +1,3 @@
 import LeetCode_Sources
 
-Solution36Tests()
+Solution23Tests()
